@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: #f5f5f5;
+    background-color: #0a0000;
+    overflow-x: hidden;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #d4af37; /* Gold */
+    text-decoration: none;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #d4af37;
+}
+
+nav a.btn {
+    border: 1px solid #d4af37;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+nav a.btn:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+/* --- 3D HOME PAGE --- */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.ui-layer {
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Let mouse pass to 3D canvas */
+}
+
+.scroll-content {
+    pointer-events: auto; /* Re-enable clicking for text */
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+h1 span { color: #ff3333; font-style: italic; }
+
+.hero-section p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    max-width: 400px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.scroll-indicator {
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+    color: #d4af37;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.content-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.right-align { justify-content: flex-end; }
+.left-align { justify-content: flex-start; }
+
+.text-box {
+    background: rgba(10, 0, 0, 0.85);
+    padding: 40px;
+    border-left: 4px solid #ff3333;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+.text-box h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.text-box p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ff3333;
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover { background-color: #cc0000; }
+
+footer {
+    padding: 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    background: #000;
+}
+
+/* --- SOLID PAGES (Menu, Contact) --- */
+.solid-bg-page {
+    background: radial-gradient(circle at top, #1a0505 0%, #000 100%);
+    min-height: 100vh;
+}
+
+.page-content {
+    padding: 150px 10% 50px 10%;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 50px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-family: 'Arial', sans-serif;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #ff3333;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Contact Page */
+.contact-layout {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-info h1 { font-size: 3rem; color: #d4af37; margin-bottom: 30px;}
+.contact-info p { font-family: 'Arial', sans-serif; margin-bottom: 20px; line-height: 1.6; font-size: 1.1rem;}
+.contact-info strong { color: #ff3333; }
+
+.contact-form {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.contact-form h2 { margin-bottom: 20px; font-weight: normal;}
+.contact-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #444;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+.contact-form input:focus { outline: none; border-color: #d4af37;}
+.contact-form .cta-btn { width: 100%; }
